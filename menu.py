@@ -156,7 +156,7 @@ def hadoop():
     
      """   )
 
-        n = int(input())
+        n = int(input("Enter your choice :"))
     
         if n == 1:
             check_jdk = subprocess.getstatusoutput("java -version")
