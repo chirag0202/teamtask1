@@ -95,51 +95,6 @@ Press n: Go back to main menu""")
    else:
     os.system("""echo "$(tput setaf 1) $(tput blink) WRONG CHOICE!!! $(tput sgr0) $(tput setaf 7)" """)
 
-
-os.system("clear")
-os.system("tput setaf 1")
-print("\t\t\t\t",end='')
-os.system("tput bold")
-
-os.system("""COLUMNS=$(tput cols) 
-title="WELCOME To My TUI" 
-printf "%*s\n"  $(((${#title}+$COLUMNS)/2)) $(tput smul)"$title"  """)
-os.system("tput rmul")
-os.system("tput sgr0")
-os.system("tput setaf 7")
-
-os.system("tput setaf 3")
-
-print("\n")
-os.system("""COLUMNS=$(tput cols) 
-design="RRRRRRR II NN   NN GGGGGGG SSSSSS   OOOOOO FFFFFF   FFFFFF II RRRRRR EEEEEE" 
-printf "%*s\n"  $(((${#design}+$COLUMNS)/2)) "$design"  """)
-
-os.system("""COLUMNS=$(tput cols) 
-design="RR   RR II NNNN NN GG      SS       OO  OO FF       FF     II RR  RR EE" 
-printf "%*s\n"  $(((${#design}+$COLUMNS)/2-2)) "$design"  """)
-
-os.system("""COLUMNS=$(tput cols) 
-design="RRRRRRR II NN NNNN GG  GGG SSSSSS   OO  OO FFFFFF   FFFFFF II RRRRRR EEEEEE" 
-printf "%*s\n"  $(((${#design}+$COLUMNS)/2)) "$design"  """)
-
-os.system("""COLUMNS=$(tput cols) 
-design="RR  RR  II NN  NNN GG   GG     SS   OO  OO FF       FF     II RR RR  EE" 
-printf "%*s\n"  $(((${#design}+$COLUMNS)/2-2)) "$design"  """)
-
-os.system("""COLUMNS=$(tput cols) 
-design="RR   RR II NN   NN GGGGGGG SSSSSS   OOOOOO FF       FF     II RR  RR EEEEEE" 
-printf "%*s\n"  $(((${#design}+$COLUMNS)/2)) "$design"  """)
-print("""
-""")
-os.system("tput setaf 7")
-
-passwd=getpass.getpass("Enter the password : ")
-if passwd!="redhat":
- input(os.system("""echo "$(tput setaf 1) $(tput blink) WRONG CHOICE!!! $(tput sgr0) $(tput setaf 7)" """))
- os.system("clear")
- exit()
-
 location=input("""Where would you like to perform your job?\na)Local\nb)Remote\nEnter your Choice- """)
 if location=='b':
     ip_r=input("Enter your IP : ")
