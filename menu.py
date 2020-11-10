@@ -25,11 +25,11 @@ Press f: Exit to main menu""")
             os.system("aws create-key-pair --key-name {}".format(key))
         elif dc=='b':
             print("""\nPress a: Launching_ec2
-        Press b: Describe_ec2
-        Press c: Stoping_ec2
-        Press d: Starting_ec2
-        Press e: Terminating_ec2
-        Press f: Exit to AWS menu""")
+Press b: Describe_ec2
+Press c: Stoping_ec2
+Press d: Starting_ec2
+Press e: Terminating_ec2
+Press f: Exit to AWS menu""")
             ec=input("Enter your choice : ")
 
             if ec == 'a' :
@@ -59,11 +59,11 @@ Press f: Exit to main menu""")
                 print("please enter correct optionn..")    
         elif dc == 'c' :
             print("""\nPress a: Create_ebs-Storage
-        Press b: Describe_ebs
-        Press c: Attaching_ebs
-        Press d: detaching_ebs
-        Press e: Deleting_ebs
-        Press f: Exit to AWS menu""")
+Press b: Describe_ebs
+Press c: Attaching_ebs
+Press d: Detach ebs
+Press e: Deleting_ebs
+Press f: Exit to AWS menu""")
             ebs=input("Enter your choice : ")
             if ebs == 'a' :
                 size=input("Enter the size of the volume :")
@@ -76,10 +76,10 @@ Press f: Exit to main menu""")
                 os.system("aws ec2  attach-volume   --volume-id {}   --instance-id {}  --device /dev/sdh".format(v_id,e_id))
             elif ebs == 'd':
                 v_id=input("Enter the volume id : ")
-                os.system("aws ec2 detach-volume --force --volume-id {}".format(id))
+                os.system("aws ec2 detach-volume --force --volume-id {}".format(v_id))
             elif ebs == 'e' :
                 v_id=input("Enter the volume id : ")
-                os.system("aws ec2 delete-volume --volume-id {}".format(id))
+                os.system("aws ec2 delete-volume --volume-id {}".format(v_id))
             elif ebs == 'f':
                 continue
             else :
@@ -87,9 +87,9 @@ Press f: Exit to main menu""")
     
         elif dc == 'd':
             print("""\nPress a: Create Security Group
-        Press b: Describe Security Group
-        Press c: delete Security Group
-        Press d: Exit to AWS menu""")
+Press b: Describe Security Group
+Press c: delete Security Group
+Press d: Exit to AWS menu""")
             sg=input("Enter your choice : ")
             if sg == 'a' :
                 name=input("Enter the name of the security group :")
@@ -108,9 +108,9 @@ Press f: Exit to main menu""")
             
         elif dc == 'e':
             print("""\nPress a: Creating s3 bucket
-        Press b: uploding content to s3
-        Press c: delete bucket
-        Press d: Exit to AWS menu""")
+Press b: uploding content to s3
+Press c: delete bucket
+Press d: Exit to AWS menu""")
             s3=input("Enter your choice : ")
             if s3 == 'a' :
                 b_name=input("Enter your bucket name : ")
@@ -310,6 +310,7 @@ Press n: Go back to main menu""")
     os.system("""echo "$(tput setaf 1) $(tput blink) WRONG CHOICE!!! $(tput sgr0) $(tput setaf 7)" """)
 
 while True:
+    os.system("clear")
     os.system("tput bold")
     os.system("tput smul")
     print("LOCAL")
