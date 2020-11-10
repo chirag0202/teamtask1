@@ -4,6 +4,8 @@ import subprocess
 import time
 
 def aws():
+    os.system("clear")
+    os.system("aws configure")
     while True:
         os.system("clear")
         os.system("tput bold")
@@ -11,7 +13,6 @@ def aws():
         print("AWS")
         os.system("tput sgr0")
         os.system("tput rmul")
-        os.system("aws configure")
         print("""\nPress a: create a key pair
 Press b: ec2
 Press c: ebs
@@ -96,7 +97,7 @@ Press f: Exit to main menu""")
                 os.system("aws ec2 create-security-group --group-name {} --description {}".format(name,des))
             elif  sg == 'b':
                 s_id=input("Enter the Security Group id :")
-                os.system("aws ec2 describe-security-group --group-id {}".format(s_id))
+                os.system("aws ec2 describe-security-groups --group-id {}".format(s_id))
             elif sg == 'c':
                 s_id=input("Enter the Security Group id :")
                 os.system("aws ec2 delete-security-group --group-id {}".format(s_id))
@@ -130,10 +131,13 @@ Press f: Exit to main menu""")
             return
         else:
             os.system("""echo "$(tput setaf 1) $(tput blink) WRONG CHOICE!!! $(tput sgr0) $(tput setaf 7)" """)
+        input("Press Enter to continue...")
+
+
 
 def hadoop():
+    os.system("clear")
     while True:
-        os.system("clear")
         os.system("tput bold")
         os.system("tput smul")
         print("Hadoop")
@@ -206,6 +210,8 @@ def hadoop():
             return
         else:
             os.system("""echo "$(tput setaf 1) $(tput blink) WRONG CHOICE!!! $(tput sgr0) $(tput setaf 7)" """)
+        input("Press Enter to continue...")
+
 
 def drive():
     os.system("clear")
@@ -243,6 +249,8 @@ Press g: Exit to main menu""")
      return
     else:
      os.system("""echo "$(tput setaf 1) $(tput blink) WRONG CHOICE!!! $(tput sgr0) $(tput setaf 7)" """)
+
+
 
 
 def docker():
