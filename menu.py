@@ -143,7 +143,7 @@ def hadoop():
         print("Hadoop")
         os.system("tput sgr0")
         os.system("tput rmul")
-        os.system("hadoop configure")
+        #os.system("hadoop configure")
         print(""" 
     press 1  : To configure the NameNode
     press 2  : To start the NameNode
