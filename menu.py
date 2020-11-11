@@ -119,7 +119,7 @@ Press d: Exit to AWS menu""")
                 location=input("Enter the location of the file :")
                 bucket=input("Enter the bucket name :")
                 img=input("Enter the image name")
-                os.system("aws s3 cp /{} s3://{}/{} --acl public-read".format(location,bucket,img))
+                os.system("aws s3 cp {} s3://{}/{} --acl public-read".format(location,bucket,img))
             elif s3 == 'c':
                 bucket=input("Enter the bucket name :")
                 region=input("Enter the region :")
